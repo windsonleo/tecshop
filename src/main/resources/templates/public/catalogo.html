@@ -1,0 +1,164 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head th:replace="fragmentos/head :: head-css">
+	
+	
+	</head>
+		
+		<title>Catalogo</title>
+
+<body>
+			
+<div class="page-container">
+   <!--/content-inner-->
+	<div class="left-content">
+	
+	<div class="inner-content">
+
+	   			  <div th:replace="fragmentos/top-nav :: top-nav">
+				
+				</div>
+				
+				
+				<div class="content">
+				
+				
+	<!-- 				mensagens do sistema  -->
+				
+		<div class="row-fluid" th:if="${sucesso}">
+					
+			<div class="alert alert-success">
+				<div class="container-fluid">
+					<div class="alert-icon">
+						<i class="material-icons">check</i>
+					</div>
+					<button type="button" class="close" data-dismiss="alert"
+						aria-label="Close">
+						<span aria-hidden="true"><i class="material-icons">clear</i></span>
+					</button>
+					<b>Mensagem:</b> <span th:utext="${sucesso}">
+					
+					
+					
+					</span>
+
+					
+				
+				</div>
+				
+				
+			</div>
+					
+					
+					
+			</div>
+					
+			<div class="row-fluid" th:if="${erro}">
+					
+			<div class="alert alert-danger">
+				<div class="container-fluid">
+					<div class="alert-icon">
+						<i class="material-icons">error</i>
+					</div>
+					<button type="button" class="close" data-dismiss="alert"
+						aria-label="Close">
+						<span aria-hidden="true"><i class="material-icons">clear</i></span>
+					</button>
+					<b>Mensagem:</b> <span th:utext="${erro}"></span>
+			
+				</div>	
+				
+			</div>
+						
+					
+			</div>
+				
+<!-- fim das mensagens -->
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+
+<div class="row-fluid">
+
+<div class="flipbook-viewport">
+	<div class="container">
+		<div class="flipbook">
+			<div style="background-image:url(img/pages/1.jpg)"></div>
+			<div style="background-image:url(img/pages/2.jpg)"></div>
+			<div style="background-image:url(img/pages/3.jpg)"></div>
+			<div style="background-image:url(img/pages/4.jpg)"></div>
+			<div style="background-image:url(img/pages/5.jpg)"></div>
+			<div style="background-image:url(img/pages/6.jpg)"></div>
+			<div style="background-image:url(img/pages/7.jpg)"></div>
+			<div style="background-image:url(img/pages/8.jpg)"></div>
+			<div style="background-image:url(img/pages/9.jpg)"></div>
+			<div style="background-image:url(img/pages/10.jpg)"></div>
+			<div style="background-image:url(img/pages/11.jpg)"></div>
+			<div style="background-image:url(img/pages/12.jpg)"></div>
+		</div>
+	</div>
+</div>
+</div>
+
+<div class="clearfix"></div>
+
+            
+            
+
+</div>
+
+</div>
+
+</div>
+<!-- </div> -->
+			
+<!-- </div> -->
+
+				<div th:replace="fragmentos/side-menu :: side-menu">
+		    	</div>
+
+
+</div>	
+
+<div class="clearfix"></div>
+
+<!-- </div> -->
+
+<div th:replace="fragmentos/footer :: script" style="display:none;"></div>
+			
+</body>
+			
+			
+</html>
+

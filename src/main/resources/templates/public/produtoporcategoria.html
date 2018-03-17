@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head th:replace="fragmentos/head :: head-css">
+	
+	
+	</head>
+		
+		<title>Produtos Por Categoria</title>
+
+<body>
+			
+<div class="page-container">
+   <!--/content-inner-->
+	<div class="left-content">
+	
+	<div class="inner-content">
+
+	   			  <div th:replace="fragmentos/top-nav :: top-nav">
+				
+				</div>
+				
+				
+				<div class="content">
+
+      <div class="women_main">                
+     <div class="w_content">
+		<div class="men">
+		<p th:text="${categoria.nome}"></p>
+			<a href="#"><h4 >Vitrine : <span th:text="${#lists.size(produtos)}">0 items</span> </h4></a>
+			<ul class="w_nav">
+						<li>Pesquisar : </li>
+		     			<li><a class="active" href="#">popular</a></li> |
+		     			<li><a href="#">novos </a></li> |
+		     			<li><a href="#">descontos</a></li> |
+		     			<li><a href="#">precos: baixo Alto </a></li> 
+		     			<div class="clear"></div>	
+		     </ul>
+		     <div class="clearfix"></div>	
+		</div>
+		<!-- grids_of_4 -->
+		<div class="grids_of_4">
+			
+						<div class="grid1_of_4" th:each="produto : ${produtos}">
+						
+						<div class="content_box"><a th:href="@{/produto/detalhes/?id={prodid}(prodid=${produto.id})}">
+<!-- 							 imGEM DO PRODUTO -->
+							 <img th:src="@{/img/produto/{imgprod}(imgprod=${produto.image})}" class="img-responsive" th:alt="${produto.descricao}" />
+							  </a>
+							<h4><a th:href="@{/produto/detalhes/?id={prodid}(prodid=${produto.id})}"  th:utext="${produto.nome}"> Duis autem</a></h4>
+<!-- 							 descricao do produto -->
+							 <p th:text="${produto.descricao}">It is a long established fact that</p>
+							 <div class="grid_1 simpleCart_shelfItem">
+<!-- 							preco do produto -->
+							 <div class="item_add"><span class="item_price"><h6 th:text="${produto.precoVenda}">ONLY $109.00</h6></span></div>
+<!-- 							adicionar ao carrinho -->
+							<div class="item_add"><span class="item_price"><a th:href="@{/carrinhocompra/addproduto/?id={prodid}(prodid=${produto.id})}">add carrinho</a></span></div>
+							 </div>
+						</div>
+				</div>
+		
+		
+		
+		
+		<!-- end grids_of_4 -->
+		
+		
+	</div>
+</div>
+	<div class="clearfix"></div>	
+</div>
+	<div class="clearfix"></div>	
+	 
+        
+
+				</div>
+
+<div class="clearfix"></div>
+
+
+             <div th:replace="fragmentos/footer :: footer">
+            
+            </div>
+            
+            
+
+</div>
+
+</div>
+
+<!-- </div> -->
+
+
+				<div th:replace="fragmentos/side-menu :: side-menu">
+		    	</div>
+
+
+<div th:replace="fragmentos/footer :: script" style="display:none;"></div>
+
+</div>
+			
+</body>
+			
+			
+</html>
+

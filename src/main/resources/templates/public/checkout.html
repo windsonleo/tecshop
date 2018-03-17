@@ -1,0 +1,208 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head th:replace="fragmentos/head :: head-css">
+	
+	
+	</head>
+		
+		<title>Checkout</title>
+
+<body>
+			
+<div class="page-container">
+   <!--/content-inner-->
+	<div class="left-content">
+	
+	<div class="inner-content">
+
+	   			  <div th:replace="fragmentos/top-nav :: top-nav">
+				
+				</div>
+				
+				
+				<div class="content">
+				
+				
+	<!-- 				mensagens do sistema  -->
+				
+		<div class="row-fluid" th:if="${sucesso}">
+					
+			<div class="alert alert-success">
+				<div class="container-fluid">
+					<div class="alert-icon">
+						<i class="material-icons">check</i>
+					</div>
+					<button type="button" class="close" data-dismiss="alert"
+						aria-label="Close">
+						<span aria-hidden="true"><i class="material-icons">clear</i></span>
+					</button>
+					<b>Mensagem:</b> <span th:utext="${sucesso}">
+					
+					
+					
+					</span>
+
+					
+				
+				</div>
+				
+				
+			</div>
+					
+					
+					
+			</div>
+					
+			<div class="row-fluid" th:if="${erro}">
+					
+			<div class="alert alert-danger">
+				<div class="container-fluid">
+					<div class="alert-icon">
+						<i class="material-icons">error</i>
+					</div>
+					<button type="button" class="close" data-dismiss="alert"
+						aria-label="Close">
+						<span aria-hidden="true"><i class="material-icons">clear</i></span>
+					</button>
+					<b>Mensagem:</b> <span th:utext="${erro}"></span>
+			
+				</div>	
+				
+			</div>
+						
+					
+			</div>
+				
+<!-- fim das mensagens -->
+				
+				
+				<br></br>
+
+
+
+<div class="women_main">
+
+	<div class="check">	 
+			 <div class="col-md-3 cart-total">
+			 <a class="continue" th:href="@{/home}">Continue a Comprar</a>
+			 <div class="price-details">
+				 <h3>Detalhes do Preco</h3>
+				 <span>Total</span>
+				 <span class="total1" th:text="${carrinhocompra.CalcularTotal()}">6200.00</span>
+				 <span>Desconto</span>
+				 <span class="total1">---</span>
+				 <span>Entrega</span>
+				 <span class="total1">150.00</span>
+				 <div class="clearfix"></div>				 
+			 </div>	
+			 <ul class="total_price">
+			   <li class="last_price"> <h4>TOTAL</h4></li>	
+			   <li class="last_price" th:text="${carrinhocompra.CalcularTotal()}"><span>6350.00</span></li>
+			   <div class="clearfix"> </div>
+			 </ul>
+			
+			 
+			 <div class="clearfix"></div>
+			 <a class="order" th:href="@{/ordem/gerarpedido/?id={carrinhocompraid}(carrinhocompraid=${carrinhocompra.id})}">Ordem de Pagamento</a>
+			 <div class="total-item">
+				 <h3>OPCOES</h3>
+				 <h4>CUPONS</h4>
+				 <a class="cpns" th:href="@{/aplicardesconto}">APLICAR</a>
+				 <p><a th:href="@{/login}">Logar</a> para usar Cupons</p>
+			 </div>
+			</div>
+		 <div class="col-md-9 cart-items">
+			 <h1>Meu Carrinho de Compras <span th:text="${#lists.size(carrinhocompra.itens)}"></span>(2)</h1>
+				
+
+			 <div class="cart-header" th:each="produto : ${carrinhocompra.itens}">
+				 <div class="close1"> </div>
+				 <div class="cart-sec simpleCart_shelfItem">
+						<div class="cart-item cyc">
+							 <img th:src="@{/img/produto/{imgprod}(imgprod=${produto.key.image})}" class="img-responsive" alt="" />
+						</div>
+					   <div class="cart-item-info">
+						<h3><a href="#" th:text="${produto.key}">Mountain Hopper(XS R034)</a><span th:text="${produto.key.descricao}">Model No: 3578</span></h3>
+						<ul class="qty">
+							<li><p th:text="${produto.value}">Size : 5</p></li>
+							<li th:text="${produto.key.precoUnitario}"><p>Qty : 1</p></li>
+						</ul>
+						
+							 <div class="delivery">
+							 <p>Taxa de Servicos : Rs.100.00</p>
+							 <span>Entrega em  2 - 3  dias uteis </span>
+							 <div class="clearfix"></div>
+				        </div>	
+					   </div>
+					   <div class="clearfix"></div>
+											
+				  </div>
+			 </div>
+
+<!-- 			 <div class="cart-header2"> -->
+<!-- 				 <div class="close2"> </div> -->
+<!-- 				  <div class="cart-sec simpleCart_shelfItem"> -->
+<!-- 						<div class="cart-item cyc"> -->
+<!-- 							 <img th:src="@{/img/11.jpg}"  class="img-responsive" alt="" /> -->
+<!-- 						</div> -->
+<!-- 					   <div class="cart-item-info"> -->
+<!-- 						<h3><a href="#">Mountain Hopper(XS R034)</a><span>Model No: 3578</span></h3> -->
+<!-- 						<ul class="qty"> -->
+<!-- 							<li><p>Size : 5</p></li> -->
+<!-- 							<li><p>Qty : 1</p></li> -->
+<!-- 						</ul> -->
+<!-- 							 <div class="delivery"> -->
+<!-- 							 <p>Service Charges : Rs.100.00</p> -->
+<!-- 							 <span>Delivered in 2-3 bussiness days</span> -->
+<!-- 							 <div class="clearfix"></div> -->
+<!-- 				        </div>	 -->
+<!-- 					   </div> -->
+<!-- 					   <div class="clearfix"></div> -->
+											
+<!-- 				  </div> -->
+<!-- 			  </div>		 -->
+		 </div>
+		 
+		
+			<div class="clearfix"> </div>
+	 </div>
+        
+
+</div>
+
+<div class="clearfix"></div>
+
+
+             <div th:replace="fragmentos/footer :: footer">
+            
+            </div>
+            
+            
+
+</div>
+
+</div>
+
+</div>
+<!-- </div> -->
+			
+<!-- </div> -->
+
+				<div th:replace="fragmentos/side-menu :: side-menu">
+		    	</div>
+
+
+</div>	
+
+<div class="clearfix"></div>
+
+<!-- </div> -->
+
+<div th:replace="fragmentos/footer :: script" style="display:none;"></div>
+			
+</body>
+			
+			
+</html>
+

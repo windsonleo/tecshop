@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragmentos/head :: head-css">
+
+</head>
+
+    <title>Cadastro Usuario </title>
+
+
+
+<body>
+
+ <div class="page-container">
+   <!--/content-inner-->
+	<div class="left-content">
+	
+	<div class="inner-content">
+
+	   			  <div th:replace="fragmentos/top-nav :: top-nav">
+				
+				</div>
+				
+		 <div class="content">
+		 
+		 
+		 <!-- 				mensagens do sistema  -->
+				
+		<div class="row-fluid" th:if="${sucesso}">
+					
+			<div class="alert alert-success">
+				<div class="container-fluid">
+					<div class="alert-icon">
+						<i class="material-icons">check</i>
+					</div>
+					<button type="button" class="close" data-dismiss="alert"
+						aria-label="Close">
+						<span aria-hidden="true"><i class="material-icons">clear</i></span>
+					</button>
+					<b>Mensagem:</b> <span th:utext="${sucesso}">
+					
+					
+					
+					</span>
+					
+				
+						<span class="btn btn-sm btn-warning"><a th:href="@{/usuario/cadastro}"><i></i>Novo</a></span>
+					    <span class="btn btn-sm btn-warning"><a th:href="@{/usuario/editar(id=${usuario.id})}"><i></i>Editar</a></span>
+				
+				</div>
+				
+				
+			</div>
+					
+					
+					
+			</div>
+					
+			<div class="row-fluid" th:if="${erro}">
+					
+			<div class="alert alert-danger">
+				<div class="container-fluid">
+					<div class="alert-icon">
+						<i class="material-icons">error</i>
+					</div>
+					<button type="button" class="close" data-dismiss="alert"
+						aria-label="Close">
+						<span aria-hidden="true"><i class="material-icons">clear</i></span>
+					</button>
+					<b>Mensagem:</b> <span th:utext="${erro}"></span>
+				
+						<span class="btn btn-sm btn-warning"><a th:href="@{/usuario/cadastro}"><i></i>Novo</a></span>
+					    <span class="btn btn-sm btn-warning"><a th:href="@{/usuario/editar(id=${usuario.id})}"><i></i>Editar</a></span>
+			
+				</div>
+				
+				
+			</div>
+					
+					
+					
+			</div>
+				
+<!-- fim das mensagens -->
+
+
+<!-- inicio do conteudo  -->
+		 
+		 
+		 
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header" data-background-color="blue">
+                                    <h4 class="title">Preencha o  Perfil</h4>
+                                    <p class="category">Insira seus  Dados</p>
+                                </div>
+                                <div class="card-content">
+			 
+				 <form th:action="@{/usuario/add}" ModelAttribute="usuario" method="POST">
+
+			 
+			
+
+			
+			         <div class="control-group">
+			         		<label class="control-label">Ativo</label>
+			         
+			               		<div class="controls">
+									
+								<input id="ativo" name="ativo" class="js-switch" type="checkbox" th:checked="${usuario.ativo}"/>
+								
+					
+
+								
+			            </div>
+			            </div>
+			                
+			              
+			               
+			              
+			               <div class="control-group">
+			                <label class="control-label">UserName</label>
+			                <div class="controls">
+										<input id="username" name="username" class="form-control" type="text"   th:value="${usuario.username}" placeholder="Digite o UserName"/>
+							
+							
+			                </div>
+			              </div>    
+			              
+			              
+<!-- 			              <div class="control-group"> -->
+<!-- 			                <label class="control-label">Foto</label> -->
+<!-- 			                <div class="controls"> -->
+<!-- 										<input id="foto" name="foto" class="form-control" type="text" value=""  th:value="${usuario.foto}" placeholder="Digite o Endereco da Foto"/> -->
+							
+							
+<!-- 			                </div> -->
+<!-- 			              </div>            -->
+			
+			
+			
+			              <div class="control-group">
+			                <label class="control-label">Senha</label>
+			                <div class="controls">
+										<input id="senha" name="senha" class="form-control" type="text"  th:value="${usuario.senha}" placeholder="Digite a Senha"/>					
+							
+							
+			                </div>
+			              </div>
+			
+			
+			
+			              <div class="control-group">
+			                <label class="control-label">Email</label>
+			                <div class="controls">
+							
+										<input id="email" name="email" class="form-control" type="text"  th:value="${usuario.email}" placeholder="Digite o Email" />
+							
+			                </div>
+			              </div>
+			
+			
+			              <div class="control-group">
+			                <label class="control-label">Roles</label>
+			                <div class="controls">
+				 <select id="roles" name="roles" multiple="multiple" class="form-control">
+				                                  <optgroup label="Tipos de Permissoes do usuario">
+					           				
+					           					<option th:text="${usuario.roles}" th:selected="${usuario.roles != null}" class="selected">Usuario Não Tem Nenhuma Regra</option>
+					           				
+					           				
+					           			
+					           				<option th:each="role : ${roles}" th:value="${role.id}" >
+					           				
+					           				<span th:text="${role.name}" >Nenhuma Regra Cadastrada </span>
+					           				
+					           				</option>
+					           				      				
+					           				
+					                </optgroup>
+				                    </select>			
+							
+			                </div>
+			              </div>
+				
+			           
+					 	 
+			                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+		
+				 	 
+						
+							<button type="submit" class="btn btn-success">Salvar</button>
+							<a href='javascript:history.back(1)' class="btn btn-default">Voltar</a>
+						
+						</form>
+						
+						</div>
+                        </div>
+                        
+                       </div>
+                       
+                        
+                        
+                        
+                    </div>
+                </div>
+            </div>
+						
+
+						<footer th:replace="fragmentos/footer :: footer">
+						
+						</footer>
+
+
+					</div>
+
+
+				</div>
+				
+								<div th:replace="fragmentos/side-menu :: side-menu">
+		    	</div>
+				
+				</div>
+				
+				
+				<div th:replace="fragmentos/footer :: script" style="display:none;"></div>
+				
+		</body>
+
+</html>

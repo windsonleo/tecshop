@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+	<html xmlns:th="http://www.thymeleaf.org">
+
+		<head th:replace="fragmentos/head :: head-css">
+		
+		</head>
+		
+			<title>Menu</title>
+
+				<body>
+			
+			<div th:fragment="side-menu">
+					<div class="sidebar-menu" >
+					<header class="logo1">
+						<a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a> 
+<!-- 						<p th:utext="${empresa.nomefantasia}">seila</p> -->
+					</header>
+						<div style="border-top:1px ridge rgba(255, 255, 255, 0.15)"></div>
+                           <div class="menu">
+									<ul id="menu" >
+										<li><a href="#" th:href="@{/home}"><i class="fa fa-tachometer"></i> <span>Home</span></a></li>
+										 <li id="menu-academico" ><a href="#" th:href="@{/produto/movimentacao}"><i class="fa fa-barcode"></i> <span> Produtos</span> <span class="fa fa-angle-right" style="float: right"></span></a>
+										   <ul id="menu-academico-sub" >
+										  
+										   <li id="menu-academico-avaliacoes" th:each="categoria: ${categorias}" > 
+										   		
+										   		<a href="shoes.html" th:href="@{/produto/produtoporcategoria/?id={cat}(cat=${categoria.id})}" th:text="${categoria.nome}">Shoes</a>
+										   
+										   </li>
+										  
+										  
+<!-- 										   <li id="menu-academico-avaliacoes" ><a href="shoes.html">Shoes</a></li> -->
+<!-- 											<li id="menu-academico-avaliacoes" ><a href="products.html">Watches</a></li> -->
+<!-- 											<li id="menu-academico-boletim" ><a href="sunglasses.html">Sunglasses</a></li> -->
+										  
+										  </ul>
+										</li>
+									<li id="menu-academico" ><a href="empresa" th:href="@{/aempresa}"><i class="fa fa-institution"></i> <span>Empresa	</span></a></li>
+									<li><a href="oferta" th:href="@{/ofertas}"><i class="fa fa-gift"  ></i> <span>Ofertas</span></a></li>
+									<li id="menu-academico" ><a href="novosprodutos" th:href="@{/novos}"><i class="fa fa-suitcase"></i> <span>Novos Produtos</span></a></li>
+									<li id="menu-academico" ><a href="indicacao" th:href="@{/indicacao}"><i class="fa fa-hand-o-up"></i> <span>Eu Indico</span></a></li>
+<!-- 									 <li><a href="bags.html"><i class="lnr lnr-envelope"></i> <span>Bags</span></a></li> -->
+<!-- 									<li><a href="products.html"><i class="lnr lnr-chart-bars"></i> <span>Watches</span></a></li> -->
+<!-- 							        <li id="menu-academico" ><a href="#"><i class="lnr lnr-layers"></i> <span>Tabs e Calender</span> <span class="fa fa-angle-right" style="float: right"></span></a> -->
+<!-- 										 <ul id="menu-academico-sub" > -->
+<!-- 											<li id="menu-academico-avaliacoes" ><a href="tabs.html">Tabs</a></li> -->
+<!-- 											<li id="menu-academico-boletim" ><a href="calender.html">Calender</a></li> -->
+
+<!-- 										  </ul> -->
+<!-- 									 </li> -->
+									<div sec:authorize="hasRole('ROLE_ADM')">
+									<li><a href="#"><i class="fa fa-black-tie"></i> <span>Administrador</span> <span class="fa fa-angle-right" style="float: right"></span></a>
+									  <ul>
+										<li><a href="cadastros" th:href="@{/cadastros}" > Cadastro</a></li>
+										<li><a href="movimentacoes" th:href="@{/movimentacoes}">Movimentacoes</a></li>
+										<li><a href="pedidovenda" >Pedidos Venda</a></li>
+										<li><a href="entrega" >Entregas</a></li>
+										<li><a href="financeiro" th:href="@{/financeiro}" >Financeiro</a></li>
+									
+									</ul>
+									</li>
+									</div>  
+<!-- 									fim do AMDINISTRATOR -->
+
+								<div sec:authorize="hasRole('ROLE_MEMBRO')">
+									<li id="menu-academico" ><a href="profile" th:href="@{/usuario/profile/?id={usuarioid}(usuarioid=${usuarioAtt.id})}"><i class="fa fa-address-book-o"></i> <span>Profile	</span></a></li>
+								</div>
+								
+
+									
+								<li id="menu-academico" ><a href="/catalogo" th:href="@{/catalogo}"><i class="fa fa-book"></i> <span>Catalogo	</span></a></li>
+								  
+								  								
+								<div sec:authorize="hasRole('ROLE_MEMBRO')">
+									<li id="menu-academico" ><a href="/logout" th:href="@{/logout}"><i class="fa fa-power-off"></i> <span>Sair	</span></a></li>
+								</div>
+								  
+								  </ul>
+								  
+								  
+								  
+								</div>
+								 
+							
+								 
+							  </div>
+							  
+							  	<div class="clearfix"></div>
+						</div>	  
+			  				
+				</body>
+
+		</html>
+
+

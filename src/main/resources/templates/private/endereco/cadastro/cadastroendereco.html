@@ -1,0 +1,233 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head th:replace="fragmentos/head :: head-css">
+	
+	
+	</head>
+		
+		<title>Cadastro Endereco</title>
+
+<body>
+			
+<div class="page-container">
+   <!--/content-inner-->
+	<div class="left-content">
+	
+	<div class="inner-content">
+
+	   			  <div th:replace="fragmentos/top-nav :: top-nav">
+				
+				</div>
+				
+				
+<div class="content">
+
+            <form class="form-horizonta" method="post" th:action="@{/cliente/addEndereco?id={clienteid}(clienteid=${cliente.id})}">
+ 
+                           <div class="control-group">
+
+                                    <div class="controls">
+
+
+                                        <div class="input-prepend">
+                                            <span class="add-on">Id</span> <input id="id" 
+                                                                                  class="form-control" name="id"
+                                                                                  type="text"
+                                                                                  th:value="${endereco.id}"
+                                                                                  placeholder="Digite o Id" />
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                                    <div class="control-group">
+
+                                        <div class="controls">
+
+                                            <div class="input-prepend">
+                                                <span class="add-on">Cep</span>
+                                                <input id="cep" class="form-control" name="cep"
+                                                       type="text" th:value="${endereco.cep}"
+                                                       placeholder="Digite o Cep" onblur="pesquisacep(this.value);"/>
+
+                                            </div>
+                                        </div>
+                                    </div>                                
+
+                                <div class="control-group">
+
+                                    <div class="controls">
+
+                                        <div class="input-prepend">
+                                            <span class="add-on">Logradouro</span> <input id="logradouro"
+                                                                                          class="form-control"
+                                                                                          name="logradouro" type="text"
+                                                                                          th:value="${endereco.logradouro}"
+                                                                                          placeholder="Digite o Logradouro"/>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="control-group">
+
+                                        <div class="controls">
+
+                                            <div class="input-prepend">
+                                                <span class="add-on">N</span> <input id="numero"
+                                                                                      class="form-control"
+                                                                                      name="numero" type="text"
+                                                                                      th:value="${endereco.numero}"
+                                                                                      placeholder="Numero"/>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="control-group">
+
+                                        <div class="controls">
+
+                                            <div class="input-prepend">
+                                                <span class="add-on">Bairro</span>
+                                                <input id="bairro"
+                                                       class="form-control" name="bairro" type="text"
+                                                       th:value="${endereco.bairro}"
+                                                       placeholder="Digite o Bairro"/>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="control-group">
+
+                                        <div class="controls">
+                                            <div class="input-prepend">
+                                                <span class="add-on">Cidade</span>
+                                                <input id="cidade" class="form-control" name="cidade"
+                                                       type="text" th:value="${endereco.cidade}"
+                                                       placeholder="Digite a Cidade"/>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                    <div class="control-group">
+
+                                        <div class="controls">
+
+                                            <div class="input-prepend">
+                                                <span class="add-on">UF</span>
+                                                <input id="uf" class="form-control" name="uf" type="text"
+                                                       th:value="${endereco.uf}" placeholder="Digite a UF"/>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+
+                                    <div class="control-group">
+
+                                        <div class="controls">
+
+                                            <div class="input-prepend">
+                                                <span class="add-on">P.Ref</span>
+                                                <input id="pontoreferencia" class="form-control"
+                                                       name="pontoreferencia" type="text"
+                                                       th:value="${endereco.pontoreferencia}"
+                                                       placeholder="Digite o Ponto de Referencia"/>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="control-group">
+
+                                        <div class="controls">
+
+                                            <div class="input-prepend">
+                                                <span class="add-on">Compl.</span>
+                                                <input id="complemento" class="form-control"
+                                                       name="complemento" type="text"
+                                                       th:value="${endereco.complemento}"
+                                                       placeholder="Digite o Complemneto"/>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="control-group">
+
+                                        <div class="controls">
+
+                                            <div class="input-prepend">
+                                                <span class="add-on">Ibge</span>
+                                                <input id="ibge" name="ibge"
+                                                       class="form-control" type="text" value=""/>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="control-group">
+
+                                        <div class="controls">
+
+                                            <div class="input-prepend">
+                                                <span class="add-on">Cliente</span>
+                                                <input id="cliente" name="cliente"
+                                                       class="form-control" type="text" th:value="${cliente.id }"/>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                
+                                
+               <div class="form-actions">
+                <input type="submit" th:value="${acao}" class="btn btn-success" />
+              </div>
+           
+            </form>
+
+
+<div class="clearfix"></div>
+
+
+<div th:replace="fragmentos/footer :: footer">
+</div>
+            
+            
+
+</div>
+
+</div>
+
+</div>
+<!-- </div> -->
+			
+<!-- </div> -->
+
+				<div th:replace="fragmentos/side-menu :: side-menu">
+		    	</div>
+
+
+</div>	
+
+<!-- </div> -->
+
+<div th:replace="fragmentos/footer :: script" style="display:none;"></div>
+			
+</body>
+			
+			
+</html>
+

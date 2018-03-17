@@ -1,0 +1,214 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head th:replace="fragmentos/head :: head-css">
+	
+	
+	</head>
+		
+		<title>Ordem</title>
+
+<body>
+			
+<div class="page-container">
+   <!--/content-inner-->
+	<div class="left-content">
+	
+	<div class="inner-content">
+
+	   			  <div th:replace="fragmentos/top-nav :: top-nav">
+				
+				</div>
+				
+				
+				<div class="content"> 
+ 
+   <div id="content-header">
+    <div id="breadcrumb"> </div>
+    <h1>Ordem</h1>
+  </div>
+ 
+  <div class="container-fluid"><hr></hr>
+    <div class="row-fluid">
+      <div class="span12">
+        <div class="widget-box">
+          <div class="widget-title"> <span class="icon"> <i class="icon-briefcase"></i> </span>
+            <h5 th:utext="${empresa.nomefantasia}">Company Name</h5>
+          </div>
+          <div class="widget-content">
+            <div class="row-fluid">
+              <div class="span6">
+                <table class="">
+                  <tbody>
+                    <tr>
+                      <td><h4 th:utext="${empresa.nomefantasia}">Your Company Name</h4></td>
+                    </tr>
+                    <tr>
+                      <td th:utext="${empresa.inscricaoestadual}">Your Town</td>
+                    </tr>
+                    <tr>
+                      <td>Your Region/State</td>
+                    </tr>
+                    <tr>
+                      <td th:utext="${empresa.telefone}">Mobile Phone: +4530422244</td>
+                    </tr>
+                    <tr>
+                      <td th:utext="${empresa.email}">me@company.com</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="span6">
+                <table class="table table-bordered table-invoice">
+                  <tbody>
+                    
+             <tr>
+                  
+                    <tr>
+                      <td class="width30" >Ordem ID:</td>
+                      <td class="width70" th:utext="${ordem.id}" ><strong>TD-6546</strong></td>
+                    </tr>
+                  
+                    <tr>
+                      <td>Data:</td>
+                      <td><strong th:utext="${ordem.data}" >March 23, 2013</strong></td>
+                    </tr>
+                   
+                    <tr>
+                      <td>Date:</td>
+                      <td><strong th:utext="${ordem.data}" >April 01, 2013</strong></td>
+                    </tr>
+                    
+                   
+                  <td class="width30" >Client Address:</td>
+                    
+                    <td class="width70" th:utext="${ordem.cliente.endereco}">
+                     <strong th:utext="${ordem.cliente}">Cliente Company name.</strong> 
+                     <span th:utext="${ordem.cliente.endereco}"> 501 Mafia Street., washington, 
+                      NYNC 3654 </span>
+                      <span th:utext="${ordem.cliente.telefone}">  Contact No: 123 456-7890 </span> 
+                     <span th:utext="${ordem.cliente.email}">   Email: youremail@companyname.com </span>
+                    
+                      
+                     </td>
+              </tr>
+                
+                    
+                    </tbody>
+                  
+                </table>
+              </div>
+            </div>
+            <div class="row-fluid">
+              <div class="span12">
+                <table class="table table-bordered table-invoice-full">
+                  <thead>
+                    <tr>
+                      <th class="head0">Type</th>
+                      <th class="head1">Desc</th>
+                      <th class="head0 right">Qty</th>
+                      <th class="head1 right">Price</th>
+                      <th class="head0 right">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Firefox</td>
+                      <td>Ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae</td>
+                      <td class="right">2</td>
+                      <td class="right">$150</td>
+                      <td class="right"><strong>$300</strong></td>
+                    </tr>
+                    <tr>
+                      <td>Chrome Plugin</td>
+                      <td>Tro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt u eos et accusamus et iusto odio dignissimos ducimus  deleniti atque</td>
+                      <td class="right">1</td>
+                      <td class="right">$1,200</td>
+                      <td class="right"><strong>$1,2000</strong></td>
+                    </tr>
+                    <tr>
+                      <td>Safari App</td>
+                      <td>Rro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt u expedita distinctio</td>
+                      <td class="right">2</td>
+                      <td class="right">$850</td>
+                      <td class="right"><strong>$1,700</strong></td>
+                    </tr>
+                    <tr>
+                      <td>Opera App</td>
+                      <td>Orro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut</td>
+                      <td class="right">3</td>
+                      <td class="right">$850</td>
+                      <td class="right"><strong>$2,550</strong></td>
+                    </tr>
+                    <tr>
+                      <td>Netscape Template</td>
+                      <td>Vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</td>
+                      <td class="right">5</td>
+                      <td class="right">$50</td>
+                      <td class="right"><strong>$250</strong></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table class="table table-bordered table-invoice-full">
+                  <tbody>
+                    <tr>
+                      <td class="msg-invoice" width="85%"><h4>Payment method: </h4>
+                        <a href="#" class="tip-bottom" title="Wire Transfer">Wire transfer</a> |  <a href="#" class="tip-bottom" title="Bank account">Bank account #</a> |  <a href="#" class="tip-bottom" title="SWIFT code">SWIFT code </a>|  <a href="#" class="tip-bottom" title="IBAN Billing address">IBAN Billing address </a></td>
+                      <td class="right"><strong>Subtotal</strong> 
+                        <strong>Tax (5%)</strong> 
+                        <strong>Discount</strong></td>
+                      <td class="right"><strong>$7,000 
+                        $600 
+                        $50</strong></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="pull-right">
+                  <h4><span>Amount Due:</span> $7,650.00</h4>
+                  
+                  <a class="btn btn-primary btn-large pull-right" href="">Pay Invoice</a> </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  <div class="clearfix"></div>
+
+
+             <div th:replace="fragmentos/footer :: footer">
+            
+            </div>
+  
+  </div>
+
+</div>
+
+
+
+
+				<div th:replace="fragmentos/side-menu :: side-menu">
+		    	</div>
+
+</div>
+
+<div class="clearfix"></div>
+
+
+</div>	
+
+
+<div th:replace="fragmentos/footer :: script" style="display:none;"></div>
+
+
+		
+		
+</body>
+			
+			
+</html>
+  

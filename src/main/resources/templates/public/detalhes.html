@@ -1,0 +1,156 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head th:replace="fragmentos/head :: head-css">
+	
+	
+	</head>
+		
+		<title>Detalhes</title>
+
+<body>
+			
+<div class="page-container">
+   <!--/content-inner-->
+	<div class="left-content">
+	
+	<div class="inner-content">
+
+	   			  <div th:replace="fragmentos/top-nav :: top-nav">
+				
+				</div>
+				
+				
+				<div class="content">
+				<div class="women_main">
+				<div class="row single">
+				<div class="det">
+				  <div class="single_left">
+					<div class="grid images_3_of_2">
+						<div class="flexslider">
+	  
+							
+						<div class="flex-viewport" style="overflow: hidden; position: relative;"><ul class="slides" style="width: 1200%; transition-duration: 0.6s; transform: translate3d(-864px, 0px, 0px);"><li th:attr="data-thumb=@{/img/produto/{imgprod}(imgprod=${produto.image})}" class="clone" aria-hidden="true" style="width: 288px; float: left; display: block;">
+								   <div class="thumb-image"> <img th:src="@{/img/produto/{imgprod}(imgprod=${produto.image})}" data-imagezoom="true" class="img-responsive" draggable="false" /> </div>
+								</li>
+								<li th:attr="data-thumb=@{/img/produto/{imgprod}(imgprod=${produto.image})}"  class="" style="width: 288px; float: left; display: block;">
+									<div class="thumb-image"> <img th:src="@{/img/produto/{imgprod}(imgprod=${produto.image})}" data-imagezoom="true" class="img-responsive" draggable="false" /> </div>
+								</li>
+								<li th:attr="data-thumb=@{/img/produto/{imgprod}(imgprod=${produto.image})}"  style="width: 288px; float: left; display: block;" class="">
+									 <div class="thumb-image"> <img th:src="@{/img/produto/{imgprod}(imgprod=${produto.image})}" data-imagezoom="true" class="img-responsive" draggable="false"/> </div>
+								</li>
+								<li th:attr="data-thumb=@{/img/produto/{imgprod}(imgprod=${produto.image})}"  style="width: 288px; float: left; display: block;" class="flex-active-slide">
+								   <div class="thumb-image"> <img th:src="@{/img/produto/{imgprod}(imgprod=${produto.image})}" data-imagezoom="true" class="img-responsive" draggable="false" /> </div>
+								</li>
+								
+							  </ul></div><ul class="flex-direction-nav"><li class="flex-nav-prev"><a class="flex-prev" href="#">Previous</a></li><li class="flex-nav-next"><a class="flex-next" href="#">Next</a></li></ul></div>
+				  </div>
+				  <div class="desc1 span_3_of_2">
+					<h3 th:text="${produto.descricao}">soluta nobis eleifend option</h3>
+					<span class="brand" th:text="${produto.nome}">Brand: <a href="#">Sed do eiusmod </a></span>
+<!-- 					</br> -->
+					<span class="code" th:text="${produto.codebar}">Product Code: Product 11</span>
+					<p th:text="${produto.descricao}">when an unknown printer took a galley of type and scrambled it to make</p>
+						<div class="price">
+							<span class="text">Price:</span>
+							<span class="price-new" th:text="${produto.precoVenda}">$110.00</span><span class="price-old">$100.00</span> 
+							<span class="price-tax" th:text="${produto.precoVenda}">Ex Tax: $90.00</span> 
+							<span class="points"><small>Price in reward points: 400</small></span> 
+						</div>
+					<div class="det_nav1">
+						<h4>Select a size :</h4>
+							<div class="sky-form col col-4">
+								<ul>
+									<li><label class="checkbox"><input type="checkbox" name="checkbox" /><i></i>L</label></li>
+									<li><label class="checkbox"><input type="checkbox" name="checkbox" /><i></i>S</label></li>
+									<li><label class="checkbox"><input type="checkbox" name="checkbox" /><i></i>M</label></li>
+									<li><label class="checkbox"><input type="checkbox" name="checkbox" /><i></i>XL</label></li>
+								</ul>
+							</div>
+					</div>
+					<div class="btn_form">
+<!-- 						<a th:href="@{/ordem/gerarpedido/?id={carrinhocompraid}(carrinhocompraid=${carrinhocompra.id})}">Comprar</a> -->
+						<a th:href="@{/ordem/gerarpedido/}">Comprar</a>
+					
+					
+					</div>
+					<a href="#"><span>login to save in wishlist </span></a>
+					
+			   	 </div>
+			   	 
+          	    <div class="clearfix"></div>
+          	   </div>
+          	   
+          	    <div class="single-bottom1">
+					<h6>Detalhes</h6>
+					<p class="prod-desc" th:text="${produto.descricao}">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option</p>
+				</div>
+				<div class="single-bottom2">
+					<h6>Produtos Similares</h6>
+						<div class="product">
+						   <div class="product-desc">
+								<div class="product-img">
+		                           <img th:src="@{/img/w8.jpg}" class="img-responsive " alt="" />
+		                       </div>
+		                       <div class="prod1-desc">
+		                           <h5><a class="product_link" href="#">Excepteur sint</a></h5>
+		                           <p class="product_descr"> Vivamus ante lorem, eleifend nec interdum non, ullamcorper et arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </p>									
+							   </div>
+							  <div class="clearfix"></div>
+					      </div>
+						 
+						 <div class="clearfix"></div>
+				     </div>
+				     <div class="product">
+						   <div class="product-desc">
+								<div class="product-img">
+		                           <img th:src="@{/img/w10.jpg}" class="img-responsive " alt="" />
+		                       </div>
+		                       <div class="prod1-desc">
+		                           <h5><a class="product_link" href="#">Excepteur sint</a></h5>
+		                           <p class="product_descr"> Vivamus ante lorem, eleifend nec interdum non, ullamcorper et arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </p>									
+							   </div>
+							   <div class="clearfix"></div>
+					      </div>
+						 
+						 <div class="clearfix"></div>
+				     </div>
+		   	  </div>
+	       </div>		
+	  </div>
+				
+
+
+<div class="clearfix"></div>
+
+
+             <div th:replace="fragmentos/footer :: footer">
+            
+            </div>
+            
+            
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+				<div th:replace="fragmentos/side-menu :: side-menu">
+		    	</div>
+
+
+
+<div th:replace="fragmentos/footer :: script" style="display:none;"></div>
+
+
+		
+		</div>	
+</body>
+			
+			
+</html>
+

@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+</head>
+
+<body>
+
+<div th:fragment="footer">
+		<div class="fo-top-di">
+			<div class="foot-top">
+				
+					<div class="col-md-6 s-c">
+						<li>
+							<div class="fooll">
+								<h1>siga nos</h1>
+							</div>
+						</li>
+						
+						<li>
+							<div class="social-ic">
+								<ul>
+									<li><a href="#"><i class="facebok"> </i></a></li>
+									<li><a href="#"><i class="twiter"> </i></a></li>
+									<li><a href="#"><i class="goog"> </i></a></li>
+									<li><a href="#"><i class="be"> </i></a></li>
+<!-- 										<div class="clearfix"></div>	 -->
+								</ul>
+							</div>
+						</li>
+							<div class="clearfix"> </div>
+					</div>
+					<div class="col-md-6 s-c">
+						<div class="stay">
+									<div class="stay-left">
+										<form th:action="@{/enviaremail/}" method="get">
+											<input id="email" name="email" type="text" placeholder="Digite seu  email" required="" value=""></input>
+										
+									<div class="btn-1">
+										<form>
+											<input type="submit" value="join" ></input>
+										</form>
+									</div>
+										<div class="clearfix"> </div>										
+										
+										</form>
+									</div>
+									
+
+						</div>
+					</div>
+					<div class="clearfix"> </div>
+				
+			</div>
+			<div class="footer">
+					<div class="col-md-3 cust">
+						<h4>AREA CLIENTE</h4>
+							<li><a href="contact.html">Centro de Ajuda</a></li>
+							<li><a href="faq.html">FAQ</a></li>
+							<li><a href="details.html">Como Comprar</a></li>
+							<li><a href="checkout.html">Entregas</a></li>
+					</div>
+					<div class="col-md-2 abt">
+						<h4>SOBRE NOS</h4>
+							<li><a href="products.html">Nossa Estoria</a></li>
+							<li><a href="products.html">Produtos</a></li>
+							<li><a href="faq.html">Career</a></li>
+							<li><a href="contact.html">Contato</a></li>
+					</div>
+					<div class="col-md-2 myac">
+						<h4>MINHA CONTA</h4>
+							<li><a href="register.html">Registro</a></li>
+							<li><a href="checkout.html">Meu Carrinho</a></li>
+							<li><a href="checkout.html">Historico de Pedido</a></li>
+							<li><a href="details.html">Pagamentos</a></li>
+					</div>
+					<div class="col-md-5 our-st">
+						<div class="our-left">
+							<h4>NOSSAS LOJA</h4>
+						</div>
+						
+						<i class="fa fa-map-marker" style="font-size:12px;color:red"> </i>	<li th:utext="${empresa.nomefantasia}">Cristina </li>
+						<i class="fa fa-phone" style="font-size:12px;color:red"> </i>	<li th:utext="${empresa.telefone}">012-586987</li>
+							<i class="fa fa-envelope-o" style="font-size:12px;color:red"> </i> <li th:utext="${empresa.email}"><a th:href="${empresa.email}">tecsoluction@sitename.com </a></li>
+					</div>
+					<div class="clearfix"> </div>
+						<p>� 2016 Gretong. All Rights Reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+			</div>
+		</div>
+			</div>
+			
+			
+			<div th:fragment="script">
+			
+
+		
+		<script src="resources/static/js/jquery-1.10.2.min.js"
+			th:src="@{/js/jquery-1.10.2.min.js}" th:inline="javascript" ></script>
+			
+					
+			
+		<script src="resources/static/js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"  th:inline="javascript"></script>
+
+
+		<script src="resources/static/js/modernizr.2.5.3.min.js"
+			th:src="@{/js/modernizr.2.5.3.min.js}" ></script>
+
+			
+			<script src="resources/static/js/turn.js"
+			th:src="@{/js/turn.js}"></script>
+			
+						
+			<script src="resources/static/js/turn.html4.min.js"
+			th:src="@{/js/turn.html4.min.js}" th:inline="javascript" ></script>
+			
+			
+						<script src="resources/static/js/basic.js"
+			th:src="@{/js/basic.js}"></script>
+			
+
+				<script src="resources/static/js/amcharts.js"
+			th:src="@{/js/amcharts.js}"></script>
+			
+
+								<script src="resources/static/js/serial.js"
+			th:src="@{/js/serial.js}" th:inline="javascript" ></script>
+			
+			
+						<script src="resources/static/js/light.js"
+			th:src="@{/js/light.js}" ></script>
+
+					<script src="resources/static/js/pie-chart.js"
+			th:src="@{/js/pie-chart.js}" type="text/javascript" ></script>
+
+	<script src="resources/static/js/owl.carousel.js"
+			th:src="@{/js/owl.carousel.js}" th:inline="javascript" ></script>
+			
+
+		<script src="resources/static/js/imagezoom.js"
+			th:src="@{/js/imagezoom.js}"></script>
+		
+
+		
+			
+		<script src="resources/static/js/jquery.flexslider.js"
+			th:src="@{/js/jquery.flexslider.js}" defer="" th:inline="javascript" ></script>
+
+			
+							<script src="resources/static/js/light.js"
+			th:src="@{/js/light.js}" th:inline="javascript" ></script>	
+
+			
+<!-- 					<script src="resources/static/js/moment-2.2.1.js" -->
+<!-- 			th:src="@{/js/moment-2.2.1.js}" th:inline="javascript" ></script> -->
+
+
+<!-- 		<script src="resources/static/js/Chart.js" -->
+<!-- 			th:src="@{/js/Chart.js}" th:inline="javascript"></script> -->
+			
+											
+<!-- 			<script src="resources/static/js/clndr.js" -->
+<!-- 			th:src="@{/js/clndr.js}" ></script> -->
+	
+	
+	
+			<script src="resources/static/js/jquery.fn.gantt.js"
+			th:src="@{/js/jquery.fn.gantt.js}" th:inline="javascript" ></script>
+
+			
+			
+		<script src="resources/static/js/jquery.nicescroll.js"
+			th:src="@{/js/jquery.nicescroll.js}" th:inline="javascript" ></script>
+	
+	
+					<script src="resources/static/js/scripts.js"
+			th:src="@{/js/scripts.js}" th:inline="javascript" ></script>
+			
+<!-- 			<script src="resources/static/js/site.js" -->
+<!-- 			th:src="@{/js/site.js}" th:inline="javascript" ></script> -->
+				
+	
+
+	
+			
+					<script src="resources/static/js/simpleCart.min.js"
+			th:src="@{/js/simpleCart.min.js}" th:inline="javascript" ></script>
+			
+
+<!-- 					<script src="resources/static/js/underscore-min.js" -->
+<!-- 			th:src="@{/js/underscore-min.js}" th:inline="javascript" ></script> -->
+	
+		<script src="resources/static/js/menu_jquery.js"
+			th:src="@{/js/menu_jquery.js}" th:inline="javascript" ></script>
+			
+			
+		<script src="resources/static/js/jquery.flot.js"
+			th:src="@{/js/jquery.flot.js}" th:inline="javascript" ></script>
+			
+			    
+   <script type="text/javascript" th:inline="javascript">  
+
+							var toggle = true;
+										
+							$(".sidebar-icon").click(function() {                
+							  if (toggle)
+							  {
+								$(".page-container").addClass("sidebar-collapsed").removeClass("sidebar-collapsed-back");
+								$("#menu span").css({"position":"absolute"});
+							  }
+							  else
+							  {
+								$(".page-container").removeClass("sidebar-collapsed").addClass("sidebar-collapsed-back");
+								setTimeout(function() {
+								  $("#menu span").css({"position":"relative"});
+								}, 400);
+							  }
+											
+											toggle = !toggle;
+										});
+	
+							
+							</script>
+					
+								
+							<script type="text/javascript">  
+						
+	
+								$(document).ready(function() {
+											$("#owl-demo").owlCarousel({
+												items : 3,
+												lazyLoad : true,
+												autoPlay : true,
+												pagination : true,
+												nav:true,
+											});
+										});
+									
+							
+							</script>
+							
+										<script>
+										// Can also be used with $(document).ready()
+										$(window).load(function() {
+										  $('.flexslider').flexslider({
+											animation: "slide",
+											controlNav: "thumbnails"
+										  });
+										});
+										</script>
+									
+		<script type="text/javascript">
+
+        $(document).ready(function () {
+            $('#demo-pie-1').pieChart({
+                barColor: '#3bb2d0',
+                trackColor: '#eee',
+                lineCap: 'round',
+                lineWidth: 8,
+                onStep: function (from, to, percent) {
+                    $(this.element).find('.pie-value').text(Math.round(percent) + '%');
+                }
+            });
+
+            $('#demo-pie-2').pieChart({
+                barColor: '#fbb03b',
+                trackColor: '#eee',
+                lineCap: 'butt',
+                lineWidth: 8,
+                onStep: function (from, to, percent) {
+                    $(this.element).find('.pie-value').text(Math.round(percent) + '%');
+                }
+            });
+
+            $('#demo-pie-3').pieChart({
+                barColor: '#ed6498',
+                trackColor: '#eee',
+                lineCap: 'square',
+                lineWidth: 8,
+                onStep: function (from, to, percent) {
+                    $(this.element).find('.pie-value').text(Math.round(percent) + '%');
+                }
+            });
+
+           
+        });
+        
+        
+     
+
+    </script>
+
+
+			 <script>$(document).ready(function(c) {
+					$('.close2').on('click', function(c){
+							$('.cart-header2').fadeOut('slow', function(c){
+						$('.cart-header2').remove();
+					});
+					});	  
+					});
+			 </script>
+			 
+			 	<script>$(document).ready(function(c) {
+					$('.close1').on('click', function(c){
+						$('.cart-header').fadeOut('slow', function(c){
+							$(this.element).remove();
+						});
+						});	  
+					});
+			   </script>
+			   
+			   	<script>$(document).ready(function(c) {
+					$('#loginButton').on('click', function(c){
+						
+						$("#loginBox").toggle();
+// 						$("#loginBox").css({'display':'block'});
+						
+						});	  
+					});
+			   </script>
+			   
+		<script>
+        $( document ).ready(function(){
+            $('.alert').fadeIn('slow', function(){
+               $('.alert').delay(2000).fadeOut(); 
+            });
+    
+            
+        });
+        </script>
+        
+        
+<!--         catalogo -->
+
+<script type="text/javascript">
+
+function loadApp() {
+
+	// Create the flipbook
+
+	$('.flipbook').turn({
+			// Width
+
+			width:922,
+			
+			// Height
+
+			height:600,
+
+			// Elevation
+
+			elevation: 50,
+			
+			// Enable gradients
+
+			gradients: true,
+			
+			// Auto center this flipbook
+
+			autoCenter: true
+
+	});
+}
+
+// Load the HTML4 version if there's not CSS transform
+
+yepnope({
+	test : Modernizr.csstransforms,
+	yep: ['js/turn.js'],
+	nope: ['js/turn.html4.min.js'],
+	both: ['css/basic.css'],
+	complete: loadApp
+});
+
+</script>
+	
+	    <script type="text/javascript">
+
+
+        //alert("entrou now template");
+
+        function limpa_formulario_cep() {
+            //Limpa valores do formul�rio de cep.
+            document.getElementById('logradouro').value = ("");
+            document.getElementById('bairro').value = ("");
+            document.getElementById('cidade').value = ("");
+            document.getElementById('uf').value = ("");
+            document.getElementById('ibge').value = ("");
+        }
+
+        function meu_callback(conteudo) {
+            if (!("erro" in conteudo)) {
+                //Atualiza os campos com os valores.
+                document.getElementById('logradouro').value = (conteudo.logradouro);
+                document.getElementById('bairro').value = (conteudo.bairro);
+                document.getElementById('cidade').value = (conteudo.localidade);
+                document.getElementById('uf').value = (conteudo.uf);
+                document.getElementById('ibge').value = (conteudo.ibge);
+
+
+            } //end if.
+
+
+            else {
+                //CEP n�o Encontrado.
+                limpa_formulario_cep();
+                alert("CEP não encontrado.");
+            }
+        }
+
+
+        function pesquisacep(valor) {
+
+            //Nova vari�vel "cep" somente com d�gitos.
+            var cep = valor.replace(/\D/g, '');
+
+            //Verifica se campo cep possui valor informado.
+            if (cep != "") {
+
+                //Express�o regular para validar o CEP.
+                var validacep = /^[0-9]{8}$/;
+
+                //Valida o formato do CEP.
+                if (validacep.test(cep)) {
+
+                    //Preenche os campos com "..." enquanto consulta webservice.
+                    document.getElementById('logradouro').value = "...";
+                    document.getElementById('bairro').value = "...";
+                    document.getElementById('cidade').value = "...";
+                    document.getElementById('uf').value = "...";
+                    document.getElementById('ibge').value = "...";
+
+                    //Cria um elemento javascript.
+                    var script = document.createElement('script');
+
+                    //Sincroniza com o callback.
+                    script.src = '//viacep.com.br/ws/' + cep + '/json/?callback=meu_callback';
+
+                    //Insere script no documento e carrega o conte�do.
+                    document.body.appendChild(script);
+
+                } //end if.
+                else {
+                    //cep é inválido.
+                    limpa_formulario_cep();
+                    alert("Formato de CEP inválido.");
+                }
+            } //end if.
+            else {
+                //cep sem valor, limpa formul�rio.
+                limpa_formulario_cep();
+            }
+        }
+
+
+    </script>
+	
+	
+	</div>
+			
+			
+
+</body>
+
+
+
+</html>
+

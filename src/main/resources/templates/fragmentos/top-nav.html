@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragmentos/head :: head-css">
+
+
+</head>
+
+<title>Top Nav</title>
+
+
+
+	<body>
+	
+	<!-- top navigation -->	   
+	<div th:fragment="top-nav">    
+		 <div class="header-section" >
+			<!-- top_bg -->
+						<div class="top_bg">
+							
+								<div class="header_top">
+									<div class="top_right">
+										<ul>
+											<li><a th:href="@{/ajuda}">Ajuda</a></li>
+											<li><a th:href="@{/contato}">Contato</a></li>
+											<li><a th:href="@{/entregas}">Entregas</a></li>
+										</ul>
+									</div>
+									<div class="top_left">
+<!-- 										<h2 th:utext="${empresa.telefone}"><span> </span> Ligue : 032 2352 782</h2> -->
+											<label><i class="fa fa-phone" style="font-size:12px;color:white"></i>
+											
+											<h2  th:utext="${empresa.telefone}"> Ligue : 032 2352 782</h2>
+											
+											</label>
+											
+											
+<!-- 											<a th:href="@{/logout}">  -->
+												
+<!-- 												<i class="material-icons">error</i> -->
+											
+<!-- 											</a> -->
+									</div>
+										<div class="clearfix"> </div>
+								</div>
+							
+						</div>
+					<div class="clearfix"></div>
+				<!-- /top_bg -->
+				</div>
+				
+				<div class="header_bg">
+						
+							<div class="header">
+								<div class="head-t">
+									<div class="logo">
+										<a href="index.html"><img src="static/img/logodephault.png" th:src="@{/img/empresa/{logoempresa}(logoempresa=${empresa.imagem})}" class="img-responsive" alt=""></img> </a>
+									</div>
+										<!-- start header_right -->
+									<div class="header_right">
+										<div class="rgt-bottom">
+											<div class="log">
+												<div class="login">
+													<div id="loginContainer"><a id="loginButton" class="btn"><span>Login</span></a>
+														<div id="loginBox" style="display: hide;">                
+														
+<!-- 															<div id="loginBox">                 -->
+														
+															<form id="loginForm" th:action="@{/login}" method="post" th:object="${usuario}">
+																	<fieldset id="body">
+																		<fieldset>
+																			  <label for="username">Usuario</label>
+																			  <input type="text" name="username" id="username"></input>
+																		</fieldset>
+																		<fieldset>
+																				<label for="senha">Password</label>
+																				<input type="password" name="senha" id="senha"></input>
+																		 </fieldset>
+																		<input type="submit"  value="login"> </input>
+																		<label for="checkbox"><input type="checkbox" id="checkbox"> </input> <i>Lembrar-me</i></label>
+																	</fieldset>
+																<span><a href="#">Esqueceu sua Senha?</a></span>
+<!-- 																<span><a href="#">close</a></span> -->
+<!-- 																				<button type="button" class="close" data-dismiss="alert" -->
+<!-- 																			aria-label="Close"> -->
+<!-- 																			<span aria-hidden="true"><i class="material-icons">clear</i></span> -->
+<!-- 																			</button> -->
+															</form>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="reg">
+												<a th:href="@{/registro}">REGISTRO</a>
+											</div>
+										<div class="cart box_1">
+											<a th:href="@{/carrinhocompra/checkout}">
+												<h3> <span class="simpleCart_total">$0.00</span> (<span id="simpleCart_quantity" class="simpleCart_quantity">0</span> items)<img th:src="@{/img/bag.png}" alt=""> </img> </h3>
+											</a>	
+<!-- 											<p><a th:href="javascript:;" class="simpleCart_empty">(carrinho vazio)</a></p> -->
+											<p><a th:href="@{/carrinhocompra/esvaziarcarrinho}" class="simpleCart_empty">(carrinho vazio)</a></p>
+											
+											<div class="clearfix"> </div>
+										</div>
+										<div class="create_btn">
+											<a th:href="@{/carrinhocompra/checkout}">CHECKOUT</a>
+										</div>
+										<div class="clearfix"> </div>
+									</div>
+									<div class="search">
+										<form>
+											<input type="text" value="" placeholder="Pesquisar..."> </input>
+											<input type="submit" value=""> </input>
+										</form>
+									</div>
+									<div class="clearfix"> </div>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+						</div>
+					
+				</div>
+				
+				</div>
+				
+
+	</body>
+
+</html>
+
+
