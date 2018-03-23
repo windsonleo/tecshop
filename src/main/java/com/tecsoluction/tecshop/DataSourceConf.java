@@ -27,12 +27,20 @@ public class DataSourceConf {
 	
     public DataSource dataSource() {
            
+        //local
+//        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+//        dataSource.setDriverClassName("org.postgresql.Driver");
+//        dataSource.setUrl("jdbc:postgresql://localhost:5432/tecshop");
+//        dataSource.setUsername("postgres");        
+//        dataSource.setPassword("");
         
+        
+        //heroku
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("org.postgresql.Driver");
-        dataSource.setUrl("jdbc:postgresql://localhost:5432/tecshop");
-        dataSource.setUsername("postgres");        
-        dataSource.setPassword("");
+        dataSource.setUrl("jdbc:postgresql://ec2-184-73-174-171.compute-1.amazonaws.com:5432/desbuoj7988s1l");
+        dataSource.setUsername("pxiktzvynhdbgp");        
+        dataSource.setPassword("6f1ae6efcb651c8428863b3ee2a353a3e8a7edf3641462e5f8a0f2fdad1132c1");
 
     	return dataSource;
     }
